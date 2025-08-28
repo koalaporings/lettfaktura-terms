@@ -1,0 +1,21 @@
+.container {
+    background-color: #ffffff;   /* Solid white background */
+    padding: 20px;               /* Space inside the box */
+    border-radius: 12px;         /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Soft shadow */
+    max-width: 700px;            /* Optional: control width */
+    margin: 10px 30px 50px 30px;           /* Center the box */
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 20px;
+            color: grey;
+        }
+
+        p a{
+            text-decoration: none;
+            color: blue;
+        }
+}
+
