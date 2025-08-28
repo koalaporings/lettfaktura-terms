@@ -22,12 +22,17 @@ body {
     min-height: 100vh;
 }
 
-/* If screen is wider than the image -> prevent cropping */
 @media (min-width: 1920px) {
     body {
-        background-size: contain; /* full image fits */
+        background-size: contain;
         background-position: center;
-        background-color: black;  /* fills empty space */
+        background-color: black;
+    }
+}
+
+@media (max-width: 1130px) {
+    body {
+        background-position: center;
     }
 }
 

@@ -22,9 +22,9 @@
 .navbar-links {
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    width: 50%;
-    gap: 32px;
+    justify-content: space-evenly;
+    width: 40%;
+    gap: 28px;
     margin: 0;
     padding: 0;
 }
@@ -76,9 +76,9 @@
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1340px) {
     .navbar {
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -91,7 +91,7 @@
     }
 
     .navbar-links li {
-        display: none; /* hide links */
+        display: none;
     }
 
     .navbar-links .dropdown-language {
@@ -101,6 +101,6 @@
     }
 
     .hamburger {
-        display: flex; /* show hamburger */
+        display: flex;
     }
 }
