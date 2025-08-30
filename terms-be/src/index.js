@@ -1,47 +1,22 @@
 import Fastify from 'fastify';
+import sequelize from './db.js';
+import greetingsController from './api/api.js'
+import textController from './api/api.js';
+
 
 const fastify = Fastify({
     logger: true
 });
 
-fastify.get('/', options, (req, reply) => {
-    return {
-        message: 'Hello World'
-    };
-});
+fastify.register(textController, { prefix: '/text' })
 
-fastify.route({
-    method: 'GET',
-    url: '/hello/:name',
-    schema: {
-        querystring: {
-            properties: {
-                lastName: { type: 'string' }
-            },
-            required: ['lastName']
-        },
-        params: {
-            properties: {
-                name: { type: 'string' }
-            },
-            required: ['name']
-        },
-
-        response: {
-            200: {
-                properties: {
-                    message: { type: 'string' }
-                },
-                required: ['message']
-            }
-        }
-    },
-    handler: (req, reply) => {
-        return {
-            message: `Hello ${req.params.name} ${req.query.lastName}`
-        };
-    }
-})
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log("Connection to the database has been established successfully.");
+    }).catch(err => {
+        console.error("Unable to connect to the database:", err);
+    });
 
 try {
     fastify.listen({ port: 8000 });
