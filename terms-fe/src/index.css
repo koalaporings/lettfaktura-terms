@@ -22,14 +22,6 @@ body {
     min-height: 100vh;
 }
 
-@media (min-width: 1920px) {
-    body {
-        background-size: contain;
-        background-position: center;
-        background-color: black;
-    }
-}
-
 @media (max-width: 1130px) {
     body {
         background-position: center;

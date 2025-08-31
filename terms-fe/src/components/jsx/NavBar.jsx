@@ -1,16 +1,29 @@
 import { useState } from "react";
 import "../css/NavBar.css";
 import Dropdown from "../jsx/Dropdown.jsx";
+import { useTranslation } from "react-i18next";
+import "../../../i18n.js";
 
-function Navbar() {
+function Navbar( { setParentLanguage } ) {
     const [isOpen, setIsOpen] = useState(false);
     const [language, setLanguage] = useState('English');
     const [showDropdown, setShowDropdown] = useState(false);
+
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+    };
 
     const dropdownHandler = () => {
         setShowDropdown(!showDropdown);
     }
 
+    const getLanguageData = (data) => {
+        changeLanguage(data);
+        setLanguage(data);
+        setParentLanguage(data);
+    }
 
     return (
         <nav className="navbar">
@@ -23,19 +36,19 @@ function Navbar() {
                 <span></span>
                 <span></span>
                 <span></span>
-                { isOpen ? <Dropdown/> : ''}
+                { isOpen ? <Dropdown navbar={true}/> : ''}
             </div>
             <ul className={`navbar-links ${isOpen ? "show" : ""}`}>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#order">Order</a></li>
-                <li><a href="#customers">Our Customers</a></li>
-                <li><a href="#about">About us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#home">{t("home", { defaultValue: "Home" })}</a></li>
+                <li><a href="#order">{t("order", { defaultValue: "Order" })}</a></li>
+                <li><a href="#customers">{t("customers", { defaultValue: "Our Customers" })}</a></li>
+                <li><a href="#about">{t("about", { defaultValue: "About us" })}</a></li>
+                <li><a href="#contact">{t("contact", { defaultValue: "Contact Us" })}</a></li>
                 <li className="dropdown-language"><a href="#language" onClick={dropdownHandler}>
                         {language}
-                        <img className="flag" src="src/assets/uk.png"/>
+                        <img className="flag" src={language === 'English' ? 'src/assets/uk.png' : 'src/assets/sweden.jpg'}/>
                     </a>
-                    { showDropdown ? <Dropdown/> : ''}
+                    { showDropdown ? <Dropdown getLanguageData={getLanguageData}/> : ''}
                 </li>
             </ul>
         </nav>

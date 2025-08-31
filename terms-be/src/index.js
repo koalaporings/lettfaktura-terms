@@ -1,11 +1,18 @@
 import Fastify from 'fastify';
 import sequelize from './db.js';
-import greetingsController from './api/api.js'
+import cors from "@fastify/cors";
+
 import textController from './api/api.js';
 
 
 const fastify = Fastify({
     logger: true
+});
+
+await fastify.register(cors, {
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 });
 
 fastify.register(textController, { prefix: '/text' })

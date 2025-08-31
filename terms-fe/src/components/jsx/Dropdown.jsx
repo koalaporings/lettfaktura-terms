@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import "../css/Dropdown.css";
 
-const Dropdown = ({ label}) => {
-    const [isOpen, setIsOpen] = useState(false);
+const Dropdown = ({ getLanguageData, navbar }) => {
 
     const items = [
         'English',
         'Svenska'
     ];
+    
 
     return (
         <div className="dropdown">
-            <ul className="dropdown-menu">
-                {items.map((item, index) => (
-                    <li key={index} onClick={item.onClick}>
+            <ul className={`dropdown-menu ${navbar ? "right" : ""}`}>
+                { navbar ? (
+                    <>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#order">Order</a></li>
+                        <li><a href="#customers">Our Customers</a></li>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </>
+                ) : (items.map((item, index) => (
+                    <li key={index} onClick={() => getLanguageData(item)}>
                         {item}
                         {index === 0 ? <img src="src/assets/uk.png"/> : <img src="src/assets/sweden.jpg"/> }
                     </li>
-                ))}
+                )))
+            }
             </ul>
         </div>
     );
