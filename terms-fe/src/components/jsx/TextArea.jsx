@@ -2,11 +2,11 @@ import '../css/TextArea.css'
 import { useEffect, useState } from 'react';
 import { getTextsByLanguage } from '../../store/api';
 
-function TextArea( { language } ) {
-    const [content, setContent] = useState("")
+function TextArea({ language }) {
+    const [content, setContent] = useState(" ")
 
     useEffect(() => {
-        const lang = language.language === 'English' ? 'english' : 'svenska';
+        const lang = language === 'English' ? 'english' : 'svenska';
         getTextsByLanguage(lang)
         .then((res) => setContent(res.data[0].content))
         .catch((err) => console.error(err));

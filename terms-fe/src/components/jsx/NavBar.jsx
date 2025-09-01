@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "../css/NavBar.css";
-import Dropdown from "../jsx/Dropdown.jsx";
 import { useTranslation } from "react-i18next";
-import "../../../i18n.js";
+import Dropdown from "../jsx/Dropdown.jsx";
+import "../css/NavBar.css";
+
 
 function Navbar( { setParentLanguage } ) {
     const [isOpen, setIsOpen] = useState(false);

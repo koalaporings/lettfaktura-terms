@@ -1,5 +1,5 @@
-import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import i18n from "i18next";
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -11,6 +11,7 @@ i18n.use(initReactI18next).init({
             about: "About us",
             contact: "Contact Us",
             button: "Close and Go Back",
+            terms: "Terms"
         }
         },
         Svenska: {
@@ -21,6 +22,7 @@ i18n.use(initReactI18next).init({
             about: "Om oss",
             contact: "Kontakta oss",
             button: "Stäng och gå tillbaka",
+            terms: "Villkor"
         }
         }
     },
