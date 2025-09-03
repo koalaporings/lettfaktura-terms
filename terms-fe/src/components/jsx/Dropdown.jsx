@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import enFlag from "../../assets/uk.png";
+import sweFlag from "../../assets/sweden.jpg";
 import "../css/Dropdown.css";
 
 const Dropdown = ({ getLanguageData, navbar }) => {
@@ -23,7 +24,7 @@ const Dropdown = ({ getLanguageData, navbar }) => {
                 ) : (items.map((item, index) => (
                     <li key={index} onClick={() => getLanguageData(item)}>
                         {item}
-                        {index === 0 ? <img src="src/assets/uk.png"/> : <img src="src/assets/sweden.jpg"/> }
+                        {index === 0 ? <img src={enFlag}/> : <img src={sweFlag}/> }
                     </li>
                 )))
             }
