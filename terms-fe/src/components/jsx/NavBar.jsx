@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Dropdown from "../jsx/Dropdown.jsx";
-import logo from "src/assets/diamond.png";
-import enFlag from "src/assets/uk.png";
-import sweFlag from "src/assets/sweden.jpg";
+import logo from "../../assets/diamond.png";
+import enFlag from "../../assets/uk.png";
+import sweFlag from "../../assets/sweden.jpg";
 import "../css/Navbar.css";
 
 
