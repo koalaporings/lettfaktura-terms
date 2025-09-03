@@ -2,9 +2,10 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    overflow: hidden;
 }
 
 body {
     overflow-y: scroll;
-    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
 }
