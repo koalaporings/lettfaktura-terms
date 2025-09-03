@@ -4,7 +4,6 @@ import cors from "@fastify/cors";
 
 import textController from './api/api.js';
 
-
 const fastify = Fastify({
     logger: true
 });
@@ -26,7 +25,7 @@ sequelize
     });
 
 try {
-    fastify.listen({ port: 8000 });
+    fastify.listen({ port: process.env.PORT || 3000, host: "0.0.0.0" });
 } catch (error) {
     fastify.log.error(error);
     process.exit(1);
