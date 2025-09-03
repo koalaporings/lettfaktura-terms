@@ -6,4 +6,5 @@
 
 body {
     overflow-y: scroll;
+    overscroll-behavior: none;
 }
