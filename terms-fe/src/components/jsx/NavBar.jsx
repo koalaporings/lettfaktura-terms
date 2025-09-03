@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Dropdown from "../jsx/Dropdown.jsx";
+import logo from "src/assets/diamond.png";
+import enFlag from "src/assets/uk.png";
+import sweFlag from "src/assets/sweden.jpg";
 import "../css/Navbar.css";
 
 
@@ -29,7 +32,7 @@ function Navbar( { setParentLanguage } ) {
         <nav className="navbar">
             <div className="navbar-logo">
                 <a href="#home">
-                    <img src="src/assets/diamond.png"/>
+                    <img src={logo}/>
                 </a>
             </div>
             <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
@@ -46,7 +49,7 @@ function Navbar( { setParentLanguage } ) {
                 <li><a href="#contact">{t("contact", { defaultValue: "Contact Us" })}</a></li>
                 <li className="dropdown-language"><a href="#language" onClick={dropdownHandler}>
                         {language}
-                        <img className="flag" src={language === 'English' ? 'src/assets/uk.png' : 'src/assets/sweden.jpg'}/>
+                        <img className="flag" src={language === 'English' ? {enFlag} : {sweFlag}}/>
                     </a>
                     { showDropdown ? <Dropdown getLanguageData={getLanguageData}/> : ''}
                 </li>
