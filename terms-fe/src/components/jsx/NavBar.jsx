@@ -49,7 +49,7 @@ function Navbar( { setParentLanguage } ) {
                 <li><a href="#contact">{t("contact", { defaultValue: "Contact Us" })}</a></li>
                 <li className="dropdown-language"><a href="#language" onClick={dropdownHandler}>
                         {language}
-                        <img className="flag" src={language === 'English' ? {enFlag} : {sweFlag}}/>
+                        <img className="flag" src={language === 'English' ? enFlag : sweFlag}/>
                     </a>
                     { showDropdown ? <Dropdown getLanguageData={getLanguageData}/> : ''}
                 </li>
