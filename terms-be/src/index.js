@@ -28,7 +28,7 @@ sequelize
     });
 
 try {
-    fastify.listen({ port: process.env.PORT || 3000, host: "0.0.0.0" });
+    fastify.listen({ port: process.env.PORT || 4000, host: "0.0.0.0" });
 } catch (error) {
     fastify.log.error(error);
     process.exit(1);
