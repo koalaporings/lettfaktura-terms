@@ -9,7 +9,10 @@ const fastify = Fastify({
 });
 
 await fastify.register(cors, {
-    origin: "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://lettfaktura-terms.vercel.app"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 });
