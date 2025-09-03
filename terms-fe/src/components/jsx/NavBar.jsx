@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Dropdown from "../jsx/Dropdown.jsx";
-import "../css/NavBar.css";
+import "../css/Navbar.css";
 
 
 function Navbar( { setParentLanguage } ) {
