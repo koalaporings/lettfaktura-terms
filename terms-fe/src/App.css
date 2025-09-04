@@ -2,9 +2,10 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    height: 100%;
 }
 
-body {
+html, body {
     overflow-y: scroll;
+    overscroll-behavior: none;
+    height: 100%;
 }
