@@ -4,8 +4,13 @@
     text-align: center;
 }
 
+html {
+    background-color: #3fc4f8;
+}
+
 html, body {
     overflow-y: scroll;
     overscroll-behavior: none;
+    overscroll-behavior-y: contain;
     height: 100%;
 }
