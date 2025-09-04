@@ -36,9 +36,6 @@ body {
     .background {
         top: -10vh;
         left: -10vw;
-        width: 120vw;
-        height: 120vh;
-        transform: scale(1.3);
         transform-origin: center top;
     };
 }
