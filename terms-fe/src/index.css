@@ -19,8 +19,7 @@ body {
     min-height: 100vh;
 }
 
-body::before {
-    content: "";
+.background {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,14 +27,14 @@ body::before {
     height: 100%;
     background-image: url("assets/sverige43.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     z-index: -1;
 }
 
 @media (max-width: 1130px) {
     body {
-        background-position: center;
+        background-position: top center;
         background-attachment: scroll;
     }
 }
