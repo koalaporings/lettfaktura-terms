@@ -5,12 +5,8 @@
 }
 
 html {
-    height: 100%;
-    background-image: url("assets/sverige43.jpg");
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: border-box;
 }
 
 html, body {
