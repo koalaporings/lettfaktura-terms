@@ -32,10 +32,3 @@ body {
     z-index: -1;
 }
 
-@media (max-width: 1130px) {
-    body {
-        background-position: top center;
-        background-attachment: scroll;
-    }
-}
-
